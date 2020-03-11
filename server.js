@@ -3,7 +3,9 @@ const app = express()
 const path = require("path")
 const bodyParser = require("mongodb")
 const MongoClient = mongodb.MongoClient
-const URI = process.env.MONGO_URI || "mongodb://localhost/database"
+const URI =
+  process.env.MONGO_URI ||
+  "mongodb://heroku_9h6d4svx:hevlcu8m59fgas9act3pmltkfp@ds111461.mlab.com:11461/heroku_9h6d4svx"
 const PORT = process.env.PORT || 5000
 const DB_NAME = process.env.DB_NAME
 
