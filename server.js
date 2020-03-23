@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 app.get("/secret", (req, res) =>
-  res.sendFile(path.join(_dirname, "secret.html"))
+  res.sendFile(path.join(__dirname, "secret.html"))
 )
 
 app.post("/secret", (req, res) => {
