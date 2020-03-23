@@ -1,7 +1,8 @@
 const express = require("express")
 const app = express()
 const path = require("path")
-const bodyParser = require("mongodb")
+const bodyParser = require("body-parser")
+const mongodb = require("mongodb")
 const MongoClient = mongodb.MongoClient
 const URI =
   process.env.MONGO_URI ||
@@ -41,12 +42,14 @@ app.post("/secret", (req, res) => {
 
 app.get("/:param*", (req, res) => {
   const name = req.url.slice(1).toLowerCase()
+
   MongoClient.connect(URI, { useNewUrlParser: true }, (err, client) => {
     if (err) {
       console.log(err)
     } else {
       const db = client.db(DB_NAME)
       const collection = db.collection("names")
+
       if (name === "deleteall") {
         collection.remove({})
         res.send("Database reset")
