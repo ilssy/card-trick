@@ -6,7 +6,7 @@ const mongodb = require("mongodb")
 const MongoClient = mongodb.MongoClient
 const URI =
   process.env.MONGO_URI ||
-  "mongodb://heroku_9h6d4svx:hevlcu8m59fgas9act3pmltkfp@ds111461.mlab.com:11461/heroku_9h6d4svx"
+  "mongodb://heroku_9gbtjhdh:ksb54dmm05r5v1c3qo9nk9dp0j@ds159546.mlab.com:59546/heroku_9gbtjhdh"
 const PORT = process.env.PORT || 5000
 const DB_NAME = process.env.DB_NAME
 
